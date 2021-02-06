@@ -2,8 +2,50 @@ body{
     margin: 0px;
     padding: 0px;
 }
+#home{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 #header{
-    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #9C27B0;
     height: 50px;
+    font-family: sans-serif;
+    color:white;
+}
+
+#grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow:2px 2px 2px 2px  darkgrey;
+    width: 200px;
+    height: 200px;
+}
+
+.card:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+p{
+    color: #D05CE3;
+}
+
+#imgCard{
+    width: 180px;
+    height: 180px;
+    
 }
