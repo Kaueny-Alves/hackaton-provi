@@ -1,4 +1,4 @@
-import { Page } from "./Page.js";
+import { secondPage } from "./hackthon.js";
 
 export function homePage() {
   function renderProfessions() {
@@ -8,6 +8,7 @@ export function homePage() {
     fetch(api)
       .then((response) => response.json())
       .then((professions) => {
+          
         professions.map(({ id, name, image }) => {
           console.log(id, name);
 
@@ -28,7 +29,7 @@ export function homePage() {
         function pageSkills(e) {
           const idPage = e.target.id;
           console.log(idPage);
-          Page(idPage);
+          secondPage(idPage);
           home.style.display = "none";
         }
 
