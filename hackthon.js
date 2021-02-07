@@ -5,7 +5,7 @@ export function secondPage(id) {
 
 
     const api2 = `https://cors-anywhere.herokuapp.com/http://localhost:3000/professions/${id}`;
-
+    console.log(api2)
 
     const result = await fetch(api2)
     console.log(result)
