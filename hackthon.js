@@ -56,8 +56,8 @@ export function secondPage() {
                 section.appendChild(nameSkill);
                 let descriptionSkill = document.createElement('p');
                 descriptionSkill.textContent = skill.description;
-                let links = document.createElement('p');
-                links.textContent = skill.link.links;
+                let links = document.createElement('a');
+                links.href = skill.link.links;
                 section.appendChild(links);
 
             }
