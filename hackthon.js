@@ -72,6 +72,8 @@ export function secondPage() {
             view.desenharSkill(profissao);
 
         }
-
     }
+
+    let controller = new Controller;
+    controller.searchProf(id);
 }
