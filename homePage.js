@@ -1,58 +1,44 @@
+import { Page } from "./Page.js";
+
 export function homePage() {
-  const home = document.querySelector("#home");
-  // fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
-  // .then((response) => response.json())
-  // .then((json) => console.log("Resposta:" + json))
-  // .catch((erro) => console.log("Erro:" + erro));
+  function renderProfessions() {
+    const api = `http://localhost:3000/professions`;
+    const home = document.querySelector("#home");
 
-  const profissoes = [
-    {
-      id: 1,
-      name: "Auxiliar Administrativo",
-      img:"https://picsum.photos/id/967/500/500"
-    },
-    {
-      id: 2,
-      name: "Vendedor(a)",
-      img:"https://picsum.photos/id/967/500/500"
-    },
-    {
-      id: 3,
-      name: "Cabeleireiro(a)",
-      img:"https://picsum.photos/id/967/500/500"
-    },
-    {
-      id: 4,
-      name: "Professor(a)",
-      img:"https://picsum.photos/id/967/500/500"
-    },
-    {
-      id: 5,
-      name: "Programador(a)",
-      img:"https://picsum.photos/id/967/500/500"
-    }
-      ]; 
+    fetch(api)
+      .then((response) => response.json())
+      .then((professions) => {
+        professions.map(({ id, name, image }) => {
+          console.log(id, name);
 
-  profissoes.map((item)=>{
-      
-    const templateSearch = `
-    <section id="grid">
-        <div class="card">
-        <img id="imgCard"src=${item.img}/>
-        </div>
-        <p>
-        ${item.name}
-        </p>
-    </section>
-   
-    `;
-    home.innerHTML += templateSearch;
-  })
-   
-  
+          const templateSearch = `
+        <section id="grid"  >
+            <div class="card"  >
+            <img class="imgCard"src=${image} id=${id} />
+            </div>
+            <p>
+            ${name}
+            </p>
+        </section>
+       
+        `;
+          home.innerHTML += templateSearch;
+        });
 
-  const buttonSearch = document.querySelector(".card");
-  buttonSearch.addEventListener("click", () => {
-    console.log("cliquei");
-  });
+        function pageSkills(e) {
+          const idPage = e.target.id;
+          console.log(idPage);
+          Page(idPage);
+          home.style.display = "none";
+        }
+
+        const search = document.querySelectorAll("#grid");
+
+        for (let i = 0; i < search.length; i++) {
+          search[i].addEventListener("click", pageSkills);
+        }
+      });
+  }
+
+  renderProfessions();
 }
