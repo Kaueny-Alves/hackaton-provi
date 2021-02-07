@@ -3,7 +3,7 @@ export function secondPage() {
     const section = document.getElementById('skills');
 
     class dadosProfissao {
-        constructor(idProfissao, nameProfissao, imageProfissao, descriptionSkill, idSkills) {
+        constructor(idProfissao, nameProfissao, imageProfissao) {
             this._idProfissao = idProfissao;
             this._nameProfissao = nameProfissao;
             this._imageProfissao = imageProfissao;
@@ -56,7 +56,9 @@ export function secondPage() {
                 section.appendChild(nameSkill);
                 let descriptionSkill = document.createElement('p');
                 descriptionSkill.textContent = skill.description;
-                let
+                let links = document.createElement('p');
+                links.textContent = skill.link.links;
+                section.appendChild(links);
 
             }
 
