@@ -1,14 +1,15 @@
+ import {professions} from './professions.js'
+
 export function secondPage(id) {
   const section = document.querySelector("#skills");
 
-  async function getDados(id) {
+  function getDados(id) {
+    professions.map(()=>{
+      console.log("page 2")
+      section.innerHTML = " Segunda Página"
+    })
 
 
-    const api2 = `https://cors-anywhere.herokuapp.com/http://localhost:3000/professions/${id}`;
-    console.log(api2)
-
-    const result = await fetch(api2)
-    console.log(result)
   }
   getDados(id);
 }

@@ -1,17 +1,13 @@
 import { secondPage } from "./hackthon.js";
+import { professions } from "./professions.js"
 
 export function homePage() {
   function renderProfessions() {
-    const api = `http://localhost:3000/professions`;
+   
     const home = document.querySelector("#home");
 
-    fetch(api)
-      .then((response) => response.json())
-      .then((professions) => {
-          
         professions.map(({ id, name, image }) => {
-          console.log(id, name);
-
+        
           const templateSearch = `
         <section id="grid"  >
             <div class="card"  >
@@ -24,8 +20,7 @@ export function homePage() {
        
         `;
           home.innerHTML += templateSearch;
-        });
-
+      
         function pageSkills(e) {
           const idPage = e.target.id;
           console.log(idPage);
