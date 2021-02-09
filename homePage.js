@@ -13,9 +13,12 @@ export function homePage() {
             <div class="card"  >
             <img class="imgCard"src=${image} id=${id} />
             </div>
-            <p>
+            <div class="nameHome">
+            <p >
             ${name}
             </p>
+            </div>
+           
         </section>
        
         `;

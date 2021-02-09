@@ -38,7 +38,7 @@ export const professions = [
   },
   {
     id: 8,
-    name: "Engenheiro(a)/Analista/Programador(a)  (mestrado profissional e doutorado)",
+    name: "Engenheiro(a)/ Analista/ Programador(a) (mestrado e doutorado)",
     image: "https://www.imagemhost.com.br/images/2021/02/07/dev002-bro.png"
   },
   {
